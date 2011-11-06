@@ -1,0 +1,33 @@
+<%= form_for(@trail) do |f| %>
+  <% if @trail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trail.errors.count, "error") %> prohibited this trail from being saved:</h2>
+
+      <ul>
+      <% @trail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :longitude_start %><br />
+    <%= f.text_field :longitude_start %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude_start %><br />
+    <%= f.text_field :latitude_start %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude_end %><br />
+    <%= f.text_field :longitude_end %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude_end %><br />
+    <%= f.text_field :latitude_end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

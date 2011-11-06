@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  longitude_start: MyString
+  latitude_start: MyString
+  longitude_end: MyString
+  latitude_end: MyString
+  lat_map: MyString
+  gmap: MyString
+
+two:
+  longitude_start: MyString
+  latitude_start: MyString
+  longitude_end: MyString
+  latitude_end: MyString
+  lat_map: MyString
+  gmap: MyString
