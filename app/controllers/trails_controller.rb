@@ -41,10 +41,11 @@ class TrailsController < ApplicationController
   # POST /trails.json
   def create
     @trail = Trail.new(params[:trail])
-	@trail.lat_map = elevation(@trail.longitude_start, @trail.latitude_start, @trail.longitude_end, @trail.latitude_end)
-	@trail.gmap = staticmap_uri(@trail.longitude_start + "," + @trail.latitude_start + "|"+ @trail.longitude_end + "," + @trail.latitude_end)
     respond_to do |format|
       if @trail.save
+	@trail.lat_map = elevation(@trail.longitude_start, @trail.latitude_start, @trail.longitude_end, @trail.latitude_end)
+	@trail.gmap = staticmap_uri(@trail.longitude_start + "," + @trail.latitude_start + "|"+ @trail.longitude_end + "," + @trail.latitude_end)
+	@trail.save
         format.html { redirect_to @trail, notice: 'Trail was successfully created.' }
         format.json { render json: @trail, status: :created, location: @trail }
       else
@@ -142,6 +143,7 @@ def staticmap_uri(locations, opts={})
       :markers => [
           "color:green|label:S|#{locs[0]}", "color:red|label:F|#{locs[1]}"
         ],
+      :path => locations,
       :sensor => false
     }.merge!(opts)
 
