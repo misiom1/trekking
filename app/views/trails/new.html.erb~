@@ -15,12 +15,6 @@
 </div>
 </div>
 <div id="main">
-<table><tr><td>Longitude start</td><td><%= @trail.longitude_start %></td></tr>
-<tr><td>Latitude start</td><td><%= @trail.latitude_start %></td></tr>
-<tr><td>Longitude end</td><td><%= @trail.longitude_end %></td></tr>
-<tr><td>Latitude end</td><td><%= @trail.latitude_end %></td></tr></table><br>
-<%= image_tag(@trail.lat_map) %><br>
-<%= image_tag(@trail.gmap) %>
 
 </div>
 <div id="sideBar">

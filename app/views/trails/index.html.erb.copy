@@ -1,0 +1,33 @@
+<h1><center>Lista współrzędnych</center></h1>
+
+<table>
+  <tr>
+    <th>Longitude start</th>
+    <th>Latitude start</th>
+    <th>Longitude end</th>
+    <th>Latitude end</th>
+    <th>Lat map</th>
+    <th>Gmap</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trails.each do |trail| %>
+  <tr>
+    <td><%= trail.longitude_start %></td>
+    <td><%= trail.latitude_start %></td>
+    <td><%= trail.longitude_end %></td>
+    <td><%= trail.latitude_end %></td>
+    <td><%= image_tag(trail.lat_map) %></td>
+    <td><%= image_tag(trail.gmap) %></td></tr><tr>
+    <td><%= link_to 'Show', trail %></td>
+    <td><%= link_to 'Edit', edit_trail_path(trail) %></td>
+    <td><%= link_to 'Destroy', trail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @trails %>
+<br />
+
+<%= link_to 'New Trail', new_trail_path %>

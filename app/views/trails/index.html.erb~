@@ -15,17 +15,21 @@
 </div>
 </div>
 <div id="main">
-<table><tr><td>Longitude start</td><td><%= @trail.longitude_start %></td></tr>
-<tr><td>Latitude start</td><td><%= @trail.latitude_start %></td></tr>
-<tr><td>Longitude end</td><td><%= @trail.longitude_end %></td></tr>
-<tr><td>Latitude end</td><td><%= @trail.latitude_end %></td></tr></table><br>
-<%= image_tag(@trail.lat_map) %><br>
-<%= image_tag(@trail.gmap) %>
-
+<% @trails.each do |trail| %>
+<table><tr><td>Longitude start</td><td><%= trail.longitude_start %></td></tr>
+<tr><td>Latitude start</td><td><%= trail.latitude_start %></td></tr>
+<tr><td>Longitude end</td><td><%= trail.longitude_end %></td></tr>
+<tr><td>Latitude end</td><td><%= trail.latitude_end %></td></tr></table>
+<%= link_to 'Show', trail %>
+<%= link_to 'Edit', edit_trail_path(trail) %>
+<%= link_to 'Destroy', trail, confirm: 'Are you sure?', method: :delete %>
+<span class="comments"></span>
+<% end %>
+<%= paginate @trails %>
 </div>
 <div id="sideBar">
 <ul id="navBar">
-<li id="noLine"><%= link_to 'Back', trails_path %></li>
+<li id="noLine"><%= link_to '» New Trail', new_trail_path %></li>
 </ul>
 <div id="box">
 </div>

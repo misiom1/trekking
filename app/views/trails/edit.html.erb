@@ -1,6 +1,33 @@
-<h1>Editing trail</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><title>Trekking</title>
 
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="gorotron2.css" />
+</head>
+
+<body>
+<div id="container">
+<div id="banner">
+<div id="dashed">
+<h1>Michał Mroczkowski</h1>
+<h2>trekking</h2>
+</div>
+</div>
+<div id="main">
 <%= render 'form' %>
-
-<%= link_to 'Show', @trail %> |
-<%= link_to 'Back', trails_path %>
+</div>
+<div id="sideBar">
+<ul id="navBar">
+<li><%= link_to 'Show', @trail %></li>
+<li id="noLine"><%= link_to 'Back', trails_path %></li>
+</ul>
+<div id="box">
+</div>
+</div>
+<div id="clear"></div>
+</div>
+<div id="bottom">
+</div>
+<div id="copy">© 2011 Michał Mroczkowski. Site design by <a href="http://www.gorotron.com">gorotron</a>.</div>
+</body></html>

@@ -2,3 +2,4 @@ Changelog:
 
 v0.1 - Program bazowy
 v0.2 - Link do mapki i wykresu generowany tylko raz i przechowywany w bazie, podzial na strony
+v0.3 - Dodano szablon strony, na mapce dodano linie pomiedzy punktami, walidacja formularzy
