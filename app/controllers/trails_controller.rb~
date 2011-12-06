@@ -2,7 +2,7 @@ class TrailsController < ApplicationController
   # GET /trails
   # GET /trails.json
   def index
-    @trails = Trail.page(params[:page]).per(1)
+    @trails = Trail.page(params[:page]).per(3)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,7 +17,7 @@ class TrailsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @trail }
+      #format.json { render json: @trail }
     end
   end
 

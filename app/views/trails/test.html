@@ -1,3 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trektest</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/trails.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/api.js?body=1" type="text/javascript"></script>
+<script src="/assets/trails.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="OTl2Osf4uvLfqCj6GRCQggoN6a3rrB/SEoXmOmAddkw=" name="csrf-token" />
+</head>
+<body>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><title>Trekking</title>
@@ -6,11 +24,11 @@
 <link rel="stylesheet" type="text/css" href="gorotron2.css" />
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<%= javascript_include_tag "api" %>
+<script src="/assets/api.js?body=1" type="text/javascript"></script>
 <script type="text/javascript">
 
   // Set a callback to run when the Google Visualization API is loaded.
-  google.setOnLoadCallback(function(){initialize(<%=@trail.longitude_start %>,<%=@trail.latitude_start %>, <%=@trail.longitude_end %>, <%=@trail.latitude_end %>)});
+  google.setOnLoadCallback(function(){initialize(@trekking.longitude_start,@trekking.longitude_end, @trekking.latitude_start, @trekking.latitude_end);});
 </script>
 </head>
 
@@ -23,10 +41,11 @@
 </div>
 </div>
 <div id="main">
-<table><tr><td>Longitude start</td><td><%= @trail.longitude_start %></td></tr>
-<tr><td>Latitude start</td><td><%= @trail.latitude_start %></td></tr>
-<tr><td>Longitude end</td><td><%= @trail.longitude_end %></td></tr>
-<tr><td>Latitude end</td><td><%= @trail.latitude_end %></td></tr></table><br>
+<table><tr><td>Longitude start</td><td>36.433269</td></tr>
+<tr><td>Latitude start</td><td>-118.291994</td></tr>
+<tr><td>Longitude end</td><td>36.606111</td></tr>
+<tr><td>Latitude end</td><td>-116.943056</td></tr></table><br>
+  <div style="width: 512px; text-align: center">Add points by clicking on the map or entering an address</div>
   <div id="map_canvas" style="border: 1px solid black; width:512px; height:400px"></div>
   <table style="width:512px;">
   <tr>
@@ -49,7 +68,7 @@
 </div>
 <div id="sideBar">
 <ul id="navBar">
-<li id="noLine"><%= link_to 'Back', trails_path %></li>
+<li id="noLine"><a href="/trails">Back</a></li>
 </ul>
 <div id="box">
 </div>
@@ -60,3 +79,8 @@
 </div>
 <div id="copy">© 2011 Michał Mroczkowski. Site design by <a href="http://www.gorotron.com">gorotron</a>.</div>
 </body></html>
+
+
+</body>
+</html>
+
